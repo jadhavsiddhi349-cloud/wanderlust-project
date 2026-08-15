@@ -4,6 +4,7 @@ const mongoose = require("mongoose");
 // const listening = require("./models/listing.js");
 const Listing = require("./models/listing.js");
 const methodOverride = require("method-override");
+const ejsMate = require("ejs-mate");
 
 app.use(methodOverride("_method"));
 //for views folder
@@ -13,6 +14,10 @@ app.set("views",path.join(__dirname,"views"));
 app.use(express.urlencoded({extended:true}));//to access content from body and params
 //DATABASE SETUP
 const MONGO_URL ="mongodb://127.0.0.1:27017/wanderlust";
+//ejs mate sertup
+app.engine('ejs', ejsMate);
+//for css
+app.use(express.static(path.join(__dirname, "/public")));
 
 //call to main fuction
 main().then(()=>{
