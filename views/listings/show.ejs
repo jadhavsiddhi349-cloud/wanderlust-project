@@ -8,19 +8,21 @@
   <div class="card-body">
     <p class="card-text">
         <b><%=listing.title%></b>
-        <br> 
-        <b><%=listing.description%></b><br>
-        <b><%=listing.image.url%></b><br>
-        <b>&#8377; <%= listing.price.toLocaleString("en-IN") %></b><br>
-        <b><%=listing.location%></b><br>
-        <b><%=listing.country%></b><br>
+        <br>
+        <%=listing.description%><br>
+        &#8377; <%= listing.price.toLocaleString("en-IN") %><br>
+        <%=listing.location%><br>
+        <%=listing.country%><br>
     </p>
   </div>
     </div>
-    
-    <a href="/testlisting/<%=listing._id%>/edit">edit this info</a>
-    <br> <br>
-    <form action="/testlisting/<%=listing._id%>?_method=DELETE" method="POST">
-        <button>Delete This Listing</button>
+    <div class="btns">
+        <a href="/testlisting/<%=listing._id%>/edit" class="btn btn-dark col-1 offset-5 edit-btn">Edit</a>
+        <form action="/testlisting/<%=listing._id%>?_method=DELETE" method="POST">
+        <button class="btn btn-dark offset-4 ">Delete</button>
     </form>
+
+    </div>
+   
+    
 </div>

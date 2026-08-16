@@ -77,3 +77,9 @@ body{
     object-fit: cover;
     border-radius: 30px !important;
  }
+ .btns{
+    display:flex;
+ }
+ .edit-btn{
+   background-color: #a71a50 !important;
+ }
